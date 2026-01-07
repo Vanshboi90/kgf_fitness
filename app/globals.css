@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void-navy: #0B1120;
+  --color-slate-grey: #94A3B8;
+  --color-kinetic-teal: #2DD4BF;
+  --color-champion-gold: #FBBF24;
+
+  --font-oswald: var(--font-oswald);
+  --font-inter: var(--font-inter);
+}
+
+:root {
+  --background: var(--color-void-navy);
+  --foreground: var(--color-slate-grey);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-oswald), sans-serif;
+}
+
+/* Custom "Cool" Scrollbar */
+.scrollbar-kinetic::-webkit-scrollbar {
+  height: 8px;
+  /* Height for horizontal scrollbar */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.scrollbar-kinetic::-webkit-scrollbar-track {
+  background: rgba(11, 17, 32, 0.5);
+  /* void-navy with opacity */
+  border-radius: 10px;
+}
+
+.scrollbar-kinetic::-webkit-scrollbar-thumb {
+  background: var(--color-kinetic-teal);
+  border-radius: 10px;
+  border: 2px solid rgba(11, 17, 32, 1);
+  /* Border matches bg for padding effect */
+}
+
+.scrollbar-kinetic::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+  cursor: grab;
+}
