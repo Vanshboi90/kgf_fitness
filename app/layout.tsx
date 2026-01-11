@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Oswald, Inter } from "next/font/google";
 import { ReactLenis } from "lenis/react";
 import "./globals.css";
@@ -17,6 +17,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "KGF Fitness | Dighi's Premier Gym",
   description: "Dighi's most spacious fitness destination. 5,000 Sq Ft of Kinetic Luxury.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
