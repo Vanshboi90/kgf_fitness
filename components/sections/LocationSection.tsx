@@ -70,7 +70,7 @@ export default function LocationSection() {
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            className="grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="transition-all duration-500"
                         ></iframe>
                     </div>
 

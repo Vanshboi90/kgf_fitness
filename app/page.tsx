@@ -2,7 +2,6 @@ import Scene from "@/components/3d/Scene";
 import Hero from "@/components/sections/Hero";
 import TheSpace from "@/components/sections/TheSpace";
 import TrainingZones from "@/components/sections/TrainingZones";
-import Amenities from "@/components/sections/Amenities";
 import FoundersOffer from "@/components/sections/FoundersOffer";
 import Footer from "@/components/sections/Footer";
 import Navigation from "@/components/sections/Navigation";
@@ -20,7 +19,6 @@ export default function Home() {
       <TheSpace id="about" />
       <TrainingZones id="services" />
       <Membership id="membership" />
-      <Amenities />
       <Testimonials id="testimonials" />
       <FoundersOffer />
       <LocationSection />

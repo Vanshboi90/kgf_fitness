@@ -8,6 +8,7 @@ export default function Hero({ id }: { id?: string }) {
     const titleLeftRef = useRef<HTMLHeadingElement>(null);
     const titleRightRef = useRef<HTMLHeadingElement>(null);
     const subRef = useRef<HTMLParagraphElement>(null);
+    const buttonsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -21,7 +22,11 @@ export default function Hero({ id }: { id?: string }) {
             subRef.current,
             { y: 20, opacity: 0 },
             { y: 0, opacity: 1, duration: 1 },
-            "-=1"
+        ).fromTo(
+            buttonsRef.current,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1 },
+            "-=0.5"
         );
     }, []);
 
@@ -36,7 +41,7 @@ export default function Hero({ id }: { id?: string }) {
                 <div className="inline-flex items-center gap-2 border border-white/20 px-4 py-2 rounded-full mb-8 backdrop-blur-sm pointer-events-auto cursor-default hover:bg-white/5 transition-colors">
                     <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
                     <span className="text-sm font-medium tracking-wider uppercase text-slate-300">
-                        Hiring Trainers & Receptionist
+                        First time in Dighi!
                     </span>
                 </div>
 
@@ -45,14 +50,10 @@ export default function Hero({ id }: { id?: string }) {
                     <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tighter leading-[0.9]">
                         <div className="overflow-hidden">
                             <span ref={titleLeftRef} className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400">
-                                KINETIC STATE
+                                KINETIC FITNESS
                             </span>
                         </div>
-                        <div className="overflow-hidden">
-                            <span ref={titleRightRef} className="block text-stroke-2 text-transparent hover:text-white transition-colors duration-500">
-                                RAW POWER
-                            </span>
-                        </div>
+
                     </h1>
                 </div>
 
@@ -63,6 +64,22 @@ export default function Hero({ id }: { id?: string }) {
                 >
                     Dighi&apos;s most spacious fitness destination. 5,000 sq ft of pure potential.
                 </p>
+
+                {/* CTA Buttons */}
+                <div ref={buttonsRef} className="mt-10 flex flex-row gap-4 md:gap-6 pointer-events-auto opacity-0">
+                    <a
+                        href="#membership"
+                        className="px-6 py-3 md:px-8 md:py-4 bg-white text-void-navy text-sm md:text-base font-bold uppercase tracking-wider rounded-full hover:bg-kinetic-teal transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] transform hover:-translate-y-1"
+                    >
+                        Join Now
+                    </a>
+                    <a
+                        href="#contact"
+                        className="px-6 py-3 md:px-8 md:py-4 bg-transparent border border-white/30 text-white text-sm md:text-base font-bold uppercase tracking-wider rounded-full hover:bg-white hover:text-void-navy transition-all duration-300 backdrop-blur-sm transform hover:-translate-y-1"
+                    >
+                        Contact
+                    </a>
+                </div>
 
                 {/* Scroll Indicator */}
                 <div className="absolute bottom-10 left-6 md:left-20 animate-bounce text-slate-500">

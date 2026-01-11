@@ -15,7 +15,7 @@ export default function TheSpace({ id }: { id?: string }) {
                     <div className="col-span-1 md:col-span-2 row-span-1 md:row-span-2 bg-slate-800/50 rounded-3xl border border-white/10 overflow-hidden group relative">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
                         <img
-                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=webp&q=50&w=600&fit=crop"
                             alt="Gym Floor"
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         />
@@ -42,9 +42,8 @@ export default function TheSpace({ id }: { id?: string }) {
                     {/* Box 3: Opening Date */}
                     <div className="col-span-1 bg-champion-gold rounded-3xl border border-champion-gold overflow-hidden p-6 flex flex-col justify-center items-center text-center relative group">
                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-                        <h3 className="text-void-navy font-bold text-lg uppercase tracking-widest mb-2 z-10">Grand Opening</h3>
-                        <p className="text-4xl md:text-5xl font-black text-void-navy z-10">JAN 5</p>
-                        <p className="text-void-navy font-medium z-10">2026</p>
+                        <h3 className="text-void-navy font-bold text-lg uppercase tracking-widest mb-2 z-10">Discount for First 100 </h3>
+                        <p className="text-4xl md:text-5xl font-black text-void-navy z-10">know more</p>
                     </div>
                 </div>
             </div>

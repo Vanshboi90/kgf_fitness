@@ -63,12 +63,13 @@ export default function Navigation() {
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-void-navy/90 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-20 flex justify-between items-center">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-20 flex justify-between items-center">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 z-50">
                         <div className="relative w-10 h-10 md:w-12 md:h-12">
                             <Image
-                                src="/logo.jpg"
+                                src="/logo.avif"
+                                unoptimized
                                 alt="KGF Fitness Logo"
                                 fill
                                 className="object-contain rounded-full"
@@ -81,7 +82,7 @@ export default function Navigation() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden lg:flex items-center gap-8">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
@@ -103,7 +104,7 @@ export default function Navigation() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden z-50 text-white focus:outline-none"
+                        className="lg:hidden z-50 text-white focus:outline-none"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg
@@ -129,6 +130,20 @@ export default function Navigation() {
                     className={`fixed inset-0 bg-void-navy z-[60] flex flex-col justify-center items-center transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
                         }`}
                 >
+                    <button
+                        className="absolute top-6 right-6 md:right-10 text-white focus:outline-none"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-8 w-8"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                     <div className="flex flex-col gap-8 text-center">
                         {navItems.map((item) => (
                             <a

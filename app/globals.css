@@ -15,6 +15,9 @@
   --foreground: var(--color-slate-grey);
 }
 
+
+
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -52,7 +55,15 @@ h6 {
   /* Border matches bg for padding effect */
 }
 
-.scrollbar-kinetic::-webkit-scrollbar-thumb:hover {
-  background: #fff;
-  cursor: grab;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

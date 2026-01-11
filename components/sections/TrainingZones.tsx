@@ -12,29 +12,36 @@ const zones = [
         title: "CrossFit & Abs",
         desc: "High Intensity Functional Training",
         color: "from-orange-500 to-red-600",
-        image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&q=80&w=2670",
+        image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&q=60&w=800",
     },
     {
         id: "02",
         title: "Zumba & Yoga",
         desc: "Rhythm, Flow, and Flexibility",
         color: "from-purple-500 to-pink-600",
-        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=2670",
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=60&w=800",
     },
     {
         id: "03",
         title: "Cardio Zone",
         desc: "Top Tier Treadmills & Ellipticals",
         color: "from-blue-500 to-cyan-600",
-        image: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=2669",
+        image: "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=60&w=800",
     },
     {
         id: "04",
         title: "Heavy Lifting",
         desc: "Personal Training & Free Weights",
         color: "from-slate-700 to-slate-900",
-        image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=2574",
+        image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=60&w=800",
     },
+];
+
+const amenities = [
+    { title: "Steam Bath", desc: "Post-workout recovery", icon: "😶‍🌫️" },
+    { title: "Diet Café", desc: "Nutrition + BMI Machine", icon: "🥗" },
+    { title: "Trekking", desc: "Community Activities", icon: "🏔️" },
+    { title: "Game Zone", desc: "Table Tennis & Play", icon: "🏓" },
 ];
 
 export default function TrainingZones({ id }: { id?: string }) {
@@ -46,8 +53,10 @@ export default function TrainingZones({ id }: { id?: string }) {
     }, []);
 
     return (
-        <section id={id} ref={containerRef} className="w-full py-20 px-4 md:px-20 bg-void-navy/80 backdrop-blur-md relative z-10">
-            <div className="max-w-7xl mx-auto">
+        <section id={id} ref={containerRef} className="w-full py-20 px-4 md:px-20 bg-void-navy/80 backdrop-blur-md relative z-10 transition-colors">
+
+            {/* Training Zones Section */}
+            <div className="max-w-7xl mx-auto mb-32">
                 <h2 className="text-4xl md:text-6xl font-bold uppercase text-white mb-16 tracking-tighter">
                     Training Zones
                 </h2>
@@ -93,6 +102,33 @@ export default function TrainingZones({ id }: { id?: string }) {
                         );
                     })}
                     <div className="border-t border-white/10"></div>
+                </div>
+            </div>
+
+            {/* Amenities Section - Merged from Amenities.tsx */}
+            <div className="max-w-7xl mx-auto relative pt-10 border-t border-white/5">
+                {/* Background Decor */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-kinetic-teal/5 rounded-full blur-[100px] pointer-events-none" />
+
+                <h2 className="text-4xl md:text-6xl font-bold uppercase text-white mb-16 text-right tracking-tighter">
+                    Lifestyle &<br />Recovery
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {amenities.map((item, index) => (
+                        <div
+                            key={index}
+                            className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-300 group"
+                        >
+                            <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                {item.icon}
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-2 uppercase">
+                                {item.title}
+                            </h3>
+                            <p className="text-slate-400 text-sm">{item.desc}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
