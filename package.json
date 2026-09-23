@@ -1,6 +1,7 @@
 {
-  "name": "temp_setup",
+  "name": "kgf-fitness",
   "version": "0.1.0",
+  "description": "Kinetic Luxury Fitness destination web application with interactive 3D Three.js experience, Next.js, GSAP & Tailwind CSS",
   "private": true,
   "scripts": {
     "dev": "next dev",
